@@ -76,6 +76,16 @@ function onStatusUpdate(titleId,checkBoxId){
 
 
 function onDeleteTodo(todoId){
+    
+// <-----------------------------DELETE Todo list items----------------------------------------->
+    let idToDelete = parseInt(todoId[todoId.length - 1]); // to get last Id..
+
+  todoList = todoList.filter(
+    (todo) => todo.id !== idToDelete); //to remove item by filtering..
+
+localStorage.setItem("mytodoList", JSON.stringify(todoList)); // to store new updated list to localStorage..
+
+//<----------------------------------------------------------------------->    
 
     let myTodo = document.getElementById(todoId);
     
